@@ -1,0 +1,97 @@
+{% extends 'espace_client_base.html.twig' %}
+
+{% block title %} Inscription Agence{% endblock %}
+
+{% block body_notification %}
+
+{% if notification is defined %} onload="setTimeout(cacherDiv,6000);" {% endif %}
+
+{% endblock %}
+
+
+
+
+{% block section %}
+
+
+{% if notification is defined %} 
+
+
+<div id="notification">
+                <div class="rectangle {{notification}}">
+                    <div class="notification-text">
+                        <img src="/images/icone/{{notification}}.svg" id="icone_notification">
+                        <span>{{contenu | raw}}</span>
+                    </div>
+                </div>
+            </div>
+       
+
+ {% endif %}
+
+
+
+
+    <h1>Demande De Réservation</h1>
+           
+     <article>  
+      
+                    <table>
+
+
+
+              <tr  class="titre_tab"><td>
+              Identifiant De Réservation </td>
+              <td>
+              Date De Réservation </td>
+              <td>
+              Nom Du Agence </td>
+              <td>
+              Nom Du Stade  </td>
+              
+              <td>
+              Categorie Du Stade  </td>
+              
+              <td>
+              Status De Réservation  </td>
+              
+             
+              </tr>
+            {% set j = 0 %}
+             {% for reservation in reservations %}
+               
+            
+            {% if j is divisible by(2) %}
+                <tr class="impaire">
+            {% else %}
+                <tr class="paire">
+            
+            {% endif %}
+                <td>
+              {{reservation.id}} </td>
+                      <td>
+              {{reservation.date|date("Y-d-m H:i")}} </td>
+              <td>
+               {{reservation.terrain.agence.nom}}  </td>
+              <td>
+             
+                {{reservation.terrain.nom}} </td>
+              <td>
+
+              
+                {{reservation.terrain.categorie}} </td>
+              <td>
+             
+                {{reservation.Status}} </td>
+                </tr>
+            {% set j = j + 1 %}
+    
+              
+             {% endfor %}
+          </table>
+    
+      
+      
+    </article>
+    
+{% endblock %}

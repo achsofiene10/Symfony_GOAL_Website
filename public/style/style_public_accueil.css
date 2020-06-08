@@ -1,0 +1,338 @@
+@font-face {
+  font-family: 'rubikregular';
+  src: url(../font/rubik/rubik-regular-webfont.woff2) format('woff2'),
+       url(../font/rubik/rubik-regular-webfont.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+  font-family: 'poppinsregular';
+  src: url(../font/poppins/poppins-regular-webfont.woff2) format('woff2'),
+       url(../font/poppins/poppins-regular-webfont.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+font-family: 'HelveticaNeue-Thin';
+src: url(../font/HelveticaNeue/HelveticaNeue-Thin.otf) format('truetype');
+font-weight: normal;
+font-style: normal;
+
+}
+
+
+
+
+
+
+
+body,section, html {
+  height: 100%;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+/*navbar*/
+#menu
+{
+  width: 100%;
+	height: 60px;
+  background-color: rgb(9,31,45);
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+	
+
+
+}
+
+#conteneur_logo
+{
+  width: 85px;
+  height: 60px;
+}
+
+.logo
+{
+	width: 125%;
+    height: 60px;
+}
+
+#conteneur_liste
+{
+	width: 75%;
+	text-align: center;
+  margin-right: 5%;
+}
+/*ul*/
+
+#conteneur_liste ul
+{
+    margin: 0 auto;
+    padding: 0;
+}
+#conteneur_liste li
+{
+    list-style: none;
+    float: right;
+    position: relative;
+    background-color: rgb(9,31,45);
+    color: white;
+    
+	font-family:  rubikregular;
+  font-size: 110%;
+    
+}
+#conteneur_liste ul li {
+    text-decoration: none;
+    width: 170px;
+    height: 55px;
+    line-height: 60px;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    
+    padding-top: 5px;
+}
+#conteneur_liste ul li a{
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 170px;
+    height: 55px;
+    
+}
+#conteneur_liste ul ul
+{
+    position: absolute;
+    top:60px;
+    visibility: hidden;
+
+}
+#conteneur_liste ul li:hover ul
+{
+    visibility: visible;
+}
+#conteneur_liste li:hover
+{
+    background-color: #353b48;
+}
+#conteneur_liste  img
+{
+  height: 25px;
+  margin-right: 1px;
+  margin-left: 1px;
+  
+
+  
+}
+
+#conteneur_liste span{
+
+  
+  margin-left: 5px;  
+  margin-right: 5px;
+  vertical-align: super;
+}
+#conteneur_liste li li
+{
+  font-size: 15px;
+}
+#conteneur_liste li li img
+{
+  width:  18px;
+  vertical-align: unset;
+}
+
+
+/* barre de recherche de navbar*/
+
+
+
+#conteneur_recherche
+{
+	width: 20%;
+}
+
+.searchbar
+{
+    float: right;
+    height: 40px;
+    background-color: white;
+    border-radius: 40px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.search_input
+{
+	color: white;
+	border: 0;
+	outline: 0;
+	background: none;
+	width: 0;
+	caret-color:transparent;
+	line-height: 40px;
+	transition: width 0.000s linear;
+}
+
+.searchbar:hover
+{
+	background-color: #353b48;
+}
+.searchbar:hover > .search_input
+{
+	padding: 0 10px;
+	width: 50%;
+	caret-color:rgb(0,196,206);
+	font-family:  rubikregular;
+	transition: width 0.05s linear;
+}
+
+.searchbar:hover > .search_icon
+{
+	background: white;
+	color: #e74c3c;
+}
+
+.search_icon
+{
+	height: 100%;
+	width: 40px;
+	float: right;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	color:white;
+}
+
+#loupe_icone
+{
+	height: 60%;
+	width: 60%;
+}
+
+/*----------------------------*/
+
+
+
+
+
+
+footer{
+  height:  100px;
+  width: 100%;
+  padding-top: 15px;
+  padding-top: 100vh;
+}
+
+
+#social{
+  width:100% ;
+  height: 65%;
+  background-color: rgb(9,31,45);
+  margin: auto;
+}
+.social_img{
+  width:  30px;
+  margin: 1%; 
+}
+footer>div>ul>li{
+  display: inline;
+  text-decoration: none;
+  
+}
+footer>div>ul{
+text-align: center;
+}
+#Copyright{
+  width: 100%;
+  height: 35%;
+  background-color: #05253f;
+  margin: auto;
+  text-align: center; 
+}
+h4{
+  margin: 0 auto 0 auto;
+  padding-top: 0.5%;
+  color: white;
+  font-family: poppinsregular;
+  font-size: 80%;
+}
+
+
+
+
+
+
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+ 
+  
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("/images/photo/Runner-Rio_2016_Olympic_Games_HD_Vector_Wallpapers_1366x15.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("/images/photo/sports-wallpapers-31391-1824976.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("/images/photo/Runner-Rio_2016_Olympic_Games_HD_Vector_Wallpaper_1366x768.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}

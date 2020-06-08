@@ -1,0 +1,33 @@
+easy_admin:
+    
+    site_name: '<img src="/images/photo/goaladmin.png" style="width:120px">'
+    
+    design:
+      menu:
+        - { entity: 'Utilisateur', icon: 'users' }
+        - { entity: 'Agence', icon: 'building' }
+        - { entity: 'Client', icon: 'user' }
+        - { entity: 'Terrain', icon: 'fa fa-futbol' }
+        - { entity: 'Reservation', icon: 'far fa-calendar' }
+        - { entity: 'Note', icon: 'fas fa-star' }
+    
+    entities:
+        Utilisateur:
+            class: App\Entity\Utilisateur
+        
+        Agence:
+            class: App\Entity\Agence
+     
+        Client:
+            class: App\Entity\Client
+
+        
+        Terrain:
+            class: App\Entity\Terrain
+        
+        Reservation:
+            class: App\Entity\Reservation
+        
+        Note:
+            class: App\Entity\Note    
+        

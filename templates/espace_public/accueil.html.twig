@@ -1,0 +1,199 @@
+<html lang="fr">
+<head>
+
+    <title>GOAL</title>
+
+    <meta charset="UTF-8">
+
+    <link href="/style/style_public_accueil.css" rel="stylesheet" type="text/css">
+    <link href="/style/style_public_tablet.css" rel="stylesheet" media="(max-width: 1050px)"/>
+    <link href="/style/style_public_portable.css" rel="stylesheet" media=" (max-width: 820px)"/>
+    <link rel="icon" type="image/jpg" href=/images/photo/goal.jpg>
+
+</head>
+<body>
+
+
+<nav id="menu">
+
+
+    <div id="conteneur_logo">
+        <a href="{{ path('accueil') }}">
+            <img src="/images/photo/goal_logo.jpg" class="logo">
+        </a>
+    </div>
+    <div id="conteneur_liste">
+        {% if app.user != "" %}
+            <ul>
+                <li>
+                    <a href="{{ path('logout') }}">
+                        <img src="/images/icone/sign-out.svg"><span> Déconnexion </span>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="{{ path('espace_public_votre_profile') }}">
+                        <img src="/images/icone/user.svg"><span>Votre Profile </span>
+                    </a>
+                </li>
+            </ul>
+        {% else %}
+            <ul>
+                <li>
+                    <a href="{{ path('espace_public_connexion') }}">
+                        <img src="/images/icone/sign-in.svg"><span>  Connexion </span>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="{{ path('inscription') }}">
+                        <img src="/images/icone/note.svg"> <span> Inscription  </span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ path('espace_public_inscription_client') }}">
+                                <img src="/images/icone/client.svg"> <span> Comme Client  </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('espace_public_inscription_agence') }}">
+                                <img src="/images/icone/placeholder.svg"> <span> Comme Agence  </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        {% endif %}
+        <ul>
+            <li>
+                <a href="{{ path('espace_public_nos_terrains') }}">
+                    <img src="/images/icone/soccer-field.svg"> <span> Nos Terrain  </span>
+                </a>
+
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="{{ path('espace_public_nos_agences') }}">
+                    <img src="/images/icone/placeholder.svg"> <span>Nos Agences </span>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="{{ path('espace_public_nos_tournois') }}">
+                    <img src="/images/icone/trophy.svg"><span> Nos Tournois</span>
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div id="conteneur_recherche">
+
+        <div class="searchbar ">
+            <input class="search_input" type="text" name="" placeholder="Chercher...">
+            <a href="#" class="search_icon"><img src="/images/icone/loupe.svg" id="loupe_icone"></a>
+        </div>
+
+    </div>
+</nav>
+
+
+<section>
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">SCROLL DOWN</span>
+        </div>
+    </div>
+
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+        <h3 style="text-align:center;">Parallax Demo</h3>
+        <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the
+            foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed
+            posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit
+            dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur
+            aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl
+            dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio.
+            Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem
+            mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante
+            augue etiam maecenas, porta porttitor placerat leo.</p>
+    </div>
+
+    <div class="bgimg-2">
+        <div class="caption">
+            <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">LESS HEIGHT</span>
+        </div>
+    </div>
+
+    <div style="position:relative;">
+        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+            <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+        </div>
+    </div>
+
+    <div class="bgimg-3">
+        <div class="caption">
+            <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SCROLL UP</span>
+        </div>
+    </div>
+
+    <div style="position:relative;">
+        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+            <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+        </div>
+    </div>
+
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">COOL!</span>
+        </div>
+
+
+        <footer>
+            <div id="social">
+                <ul>
+                    <li>
+                        <a href="#"> <img src="/images/icone/facebook.svg" class="social_img"></a>
+                    </li>
+
+                    <li>
+                        <a href="#"> <img src="/images/icone/twitter.svg" class="social_img"></a>
+
+                    </li>
+
+                    <li>
+                        <a href="#"><img src="/images/icone/google-plus.svg" class="social_img"> </a>
+                    </li>
+
+                    <li>
+                        <a href="#"><img src="/images/icone/linkedin.svg" class="social_img"></a>
+                    </li>
+
+
+                    <li>
+                        <a href="#"><img src="/images/icone/instagram.svg" class="social_img"></a>
+                    </li>
+
+                    <li>
+                        <a href="#"><img src="/images/icone/pinterest.svg" class="social_img"></a>
+                    </li>
+
+                </ul>
+
+            </div>
+            <div id="Copyright">
+                <h4>&copy; 2020 Copyright: Sofiene achour</h4>
+            </div>
+        </footer>
+    </div>
+</section>
+
+
+</body>
+</html>

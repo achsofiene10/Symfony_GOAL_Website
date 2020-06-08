@@ -1,0 +1,27 @@
+{% extends 'espace_public_base.html.twig' %}
+
+{% block title %} Inscription {% endblock %}
+
+{% block section %}
+   <article>  
+      <div id="inscription_client" >
+            <a href="{{path('espace_public_inscription_client')}}">
+
+                <div id="sous_div_inscription_client" >
+                  <h3 id="titre_inscription_client">Créer un compte en tant que client et beneficer des promos et des cadeaux </h3>
+                  <h3 id="titre_inscription_client_hover">N'hesitez pas de créer un compte </h3>
+                </div>
+            </a>
+      </div>
+      
+      <div id="inscription_agence" >
+            <a href="{{path('espace_public_inscription_agence')}}">
+
+                    <div id="sous_div_inscription_agence" >
+                      <h3 id="titre_inscription_agence">Créer un compte en tant qu'agence et augmenter votre revenue </h3>
+                      <h3 id="titre_inscription_agence_hover">N'hesitez pas de créer un compte </h3>
+                    </div>
+                </a>
+        </div>
+    </article>
+{% endblock %}

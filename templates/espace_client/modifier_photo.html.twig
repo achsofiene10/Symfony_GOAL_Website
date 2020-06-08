@@ -1,0 +1,83 @@
+{% extends 'espace_client_base.html.twig' %}
+{% block title %} Espace Agence- Changer Image D'Agence{% endblock %}
+
+{% block body_notification %}
+
+{% if   notification is defined %} onload="setTimeout(cacherDiv,3000);" {% endif %}
+
+{% endblock %}
+
+
+{% block section %}
+    <article>
+
+
+
+<h2>Changer Image Du Profile</h2>
+
+
+
+{% if   notification is defined %} 
+
+
+<div id="notification">
+                <div class="rectangle {{notification }}">
+                    <div class="notification-text">
+                        <img src="/images/icone/{{notification}}.svg" id="icone_notification">
+                        <span>{{contenu }}</span>
+                    </div>
+                </div>
+            </div>
+       
+
+ {% endif %}
+  
+      <div  class="bloc">
+ 
+ <form method="post"  action="{{path('espace_client_modifier_photo')}}" enctype="multipart/form-data">
+              
+
+                <center>
+
+              <div class="input-file">
+													<img id="file_upload" src="/images/photo/{{app.user.client.photo}}" alt="your image" class="upload-img" />
+													<div class="input-file-upload">
+														<span class="upload-label">Choisir Une Image</span>
+														<input type='file' onchange="readURL(this);" name="photo" accept="image/*" required />
+													</div>
+												</div>
+			
+                </center>
+       
+                
+                
+
+
+                
+
+             
+
+
+
+
+          
+          <center>
+          <div>
+            <button type="submit" class="connection_bouton">Modifier</button>
+          </div></center>
+
+
+          </div>
+        </form>
+        
+      </div>
+      
+      
+  
+
+
+
+    </article>
+
+
+{% endblock %}

@@ -1,0 +1,392 @@
+{% extends 'espace_public_base.html.twig' %}
+
+{% block title %} Nos Tournois{% endblock %}
+
+{% block section %}
+
+   <article>  
+      
+    
+<div class="slideshow-container">
+
+
+    <div class="myslides fade">
+    
+    <div class="numbers">1 / 4</div>
+    
+    <div><img src="/images/photo/tournois3.jpg" alt="Exemple de stade de basket."class="slider_img"></div>
+    
+  
+    
+    </div>
+    
+    
+    <div class="myslides fade">
+    
+    <div class="numbers">2 / 4</div>
+    
+    <div><img src="/images/photo/tournois4.jpg" alt="Exemple de stade de tennis." class="slider_img"></div>
+    
+    
+    
+    </div>
+    
+    
+    <div class="myslides fade">
+    
+    <div class="numbers">3 / 4</div>
+    
+    <div><img src="/images/photo/tournois2.jpg" alt="Exemple de stade de foot." class="slider_img"></div>
+    
+    
+    </div>
+    
+    
+    <div class="myslides fade">
+    
+    <div class="numbers">4 / 4</div>
+    
+    <div><img src="/images/photo/tournois1.jpg" alt="Exemple de stade de tennis." class="slider_img"></div>
+    
+    
+    
+    </div>
+    
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    
+    </div>
+    
+    <br>
+    
+    
+    <div style="text-align:center">
+    
+    <span class="dots" onclick="currentSlide(1)"></span> 
+    
+    <span class="dots" onclick="currentSlide(2)"></span> 
+    
+    <span class="dots" onclick="currentSlide(3)"></span> 
+    
+    <span class="dots" onclick="currentSlide(4)"></span> 
+    
+    </div>
+
+</article>
+<article>
+<form>
+<div class="rechercheterrain">
+  
+                  <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" ">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Text</label>
+                
+                </div>
+
+                <div class="floating-label">  
+                
+                    <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="">
+                
+                        <option value=""></option>
+                
+                        <option value="1">Alabama</option>
+                
+                        <option value="2">Boston</option>
+                
+                        <option value="3">Ohaio</option>
+                
+                        <option value="4">New York</option>
+                
+                        <option value="5">Washington</option>
+                
+               
+                    </select>
+                
+               
+                    <span class="highlight"></span>
+               
+                    
+                
+                    <label>Select</label>
+                
+                
+                </div>
+
+
+                <div class="floating-label">  
+                
+                    <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="">
+                
+                        <option value=""></option>
+                
+                        <option value="1">Alabama</option>
+                
+                        <option value="2">Boston</option>
+                
+                        <option value="3">Ohaio</option>
+                
+                        <option value="4">New York</option>
+                
+                        <option value="5">Washington</option>
+                
+               
+                    </select>
+                
+               
+                    <span class="highlight"></span>
+               
+                    
+                
+                    <label>Select</label>
+                
+                
+                </div>
+
+
+</div>
+
+</form>
+
+</article>
+
+
+
+
+<article>
+
+
+
+
+
+
+
+      
+      <div id="stadeid1" class="overlay">
+        <div class="popup">
+          <div class="close">
+            <a href="#stadeimg1">&times;</a>
+          </div>
+          <div class="content">
+            <center>
+                <a href="/images/photo/test.jpg"><img src="/images/photo/test.jpg" class="modalphoto"></a>
+          </center>
+  
+          <table>
+              <tr class="paire"><td><span class="champ">Nom : </span>         stade 1</td>
+              </tr>
+  
+              <tr class="impaire"><td><span class="champ">Largeur : </span>         XXXXXXXX</td>
+              </tr>
+              <tr class="paire"><td><span class="champ">Longeur : </span>         XXXXXXXX</td>
+                </tr>
+    
+                <tr class="impaire"><td><span class="champ">Nom d'agence : </span>         XXXXXXXX</td>
+                </tr>
+                <tr class="paire"><td><span class="champ">Note : </span>         XXXXXXXX</td>
+                  </tr>
+      
+                  <tr class="impaire"> <td><span class="champ">Num telephone : </span>         XXXXXXXX</td>
+                  </tr>
+  
+            </table>
+  
+  
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+       
+      <div id="stadeid2" class="overlay">
+          <div class="popup">
+            <div class="close">
+              <a href="#stadeimg2">&times;</a>
+            </div>
+            <div class="content">
+              <center>
+                  <a href="/images/photo/test.jpg"><img src="/images/photo/test.jpg" class="modalphoto"></a>
+            </center>
+    
+            <table>
+                <tr class="paire"><td><span class="champ">Nom : </span>         stade 2</td>
+                </tr>
+    
+                <tr class="impaire"><td><span class="champ">Largeur : </span>         XXXXXXXX</td>
+                </tr>
+                <tr class="paire"><td><span class="champ">Longeur : </span>         XXXXXXXX</td>
+                  </tr>
+      
+                  <tr class="impaire"><td><span class="champ">Nom d'agence : </span>         XXXXXXXX</td>
+                  </tr>
+                  <tr class="paire"><td><span class="champ">Note : </span>         XXXXXXXX</td>
+                    </tr>
+        
+                    <tr class="impaire"> <td><span class="champ">Num telephone : </span>         XXXXXXXX</td>
+                    </tr>
+    
+              </table>
+    
+    
+            </div>
+          </div>
+        </div>
+
+
+        <div id="stadeid3" class="overlay">
+            <div class="popup">
+              <div class="close">
+                <a href="#stadeimg3">&times;</a>
+              </div>
+              <div class="content">
+                <center>
+                    <a href="/images/photo/test.jpg"><img src="/images/photo/test.jpg" class="modalphoto"></a>
+              </center>
+      
+              <table>
+                  <tr class="paire"><td><span class="champ">Nom : </span>         stade 3</td>
+                  </tr>
+      
+                  <tr class="impaire"><td><span class="champ">Largeur : </span>         XXXXXXXX</td>
+                  </tr>
+                  <tr class="paire"><td><span class="champ">Longeur : </span>         XXXXXXXX</td>
+                    </tr>
+        
+                    <tr class="impaire"><td><span class="champ">Nom d'agence : </span>         XXXXXXXX</td>
+                    </tr>
+                    <tr class="paire"><td><span class="champ">Note : </span>         XXXXXXXX</td>
+                      </tr>
+          
+                      <tr class="impaire"> <td><span class="champ">Num telephone : </span>         XXXXXXXX</td>
+                      </tr>
+      
+                </table>
+      
+      
+              </div>
+            </div>
+          </div>
+    
+    
+    
+    
+    
+    
+           
+          <div id="stadeid4" class="overlay">
+              <div class="popup">
+                <div class="close">
+                  <a href="#stadeimg4">&times;</a>
+                </div>
+                <div class="content">
+                  <center>
+                      <a href="/images/photo/test.jpg"><img src="/images/photo/test.jpg" class="modalphoto"></a>
+                </center>
+        
+                <table>
+                    <tr class="paire"><td><span class="champ">Nom : </span>         stade 4</td>
+                    </tr>
+        
+                    <tr class="impaire"><td><span class="champ">Largeur : </span>         XXXXXXXX</td>
+                    </tr>
+                    <tr class="paire"><td><span class="champ">Longeur : </span>         XXXXXXXX</td>
+                      </tr>
+          
+                      <tr class="impaire"><td><span class="champ">Nom d'agence : </span>         XXXXXXXX</td>
+                      </tr>
+                      <tr class="paire"><td><span class="champ">Note : </span>         XXXXXXXX</td>
+                        </tr>
+            
+                        <tr class="impaire"> <td><span class="champ">Num telephone : </span>         XXXXXXXX</td>
+                        </tr>
+        
+                  </table>
+        
+        
+                </div>
+              </div>
+          </div>
+
+
+
+
+
+
+
+
+   <div class="stades">
+   <div class="stade">
+     
+      <a href="#stadeid1" id="stadeimg1">
+          <img src="/images/photo/test.jpg">
+          <span class="note_stade"><span class="star">&#9733;</span>4.3</span>
+          
+          <span class="titre_stade">nom de stade</span>
+          </a>
+   </div>
+
+
+
+   <div class="stade">
+     
+      <a href="#stadeid2" id="stadeimg2">
+          <img src="/images/photo/test.jpg">
+          <span class="note_stade"><span class="star">&#9733;</span>4.3</span>
+          
+          <span class="titre_stade">nom de stade</span>
+          </a>
+   </div>
+   
+
+
+
+   <div class="stade">
+     
+      <a href="#stadeid3" id="stadeimg3">
+          <img src="/images/photo/test.jpg">
+          <span class="note_stade"><span class="star">&#9733;</span>4.3</span>
+          
+          <span class="titre_stade">nom de stade</span>
+          </a>
+   </div>
+
+
+
+
+   <div class="stade">
+     
+      <a href="#stadeid4" id="stadeimg4">
+          <img src="/images/photo/test.jpg">
+          <span class="note_stade"><span class="star">&#9733;</span>4.3</span>
+          
+          <span class="titre_stade">nom de stade</span>
+          </a>
+   </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+{% endblock %}

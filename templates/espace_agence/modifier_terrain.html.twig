@@ -1,0 +1,362 @@
+{% extends 'espace_agence_base.html.twig' %}
+
+{% block title %} Vos Tournois{% endblock %}
+
+{% block section %}
+
+   <article>  
+      
+    
+<div class="slideshow-container">
+
+
+    <div class="myslides fade">
+    
+    <div class="numbers">1 / 4</div>
+    
+    <div><img src="/images/photo/tournois3.jpg" alt="Exemple de stade de basket."class="slider_img"></div>
+    
+  
+    
+    </div>
+    
+    
+    <div class="myslides fade">
+    
+    <div class="numbers">2 / 4</div>
+    
+    <div><img src="/images/photo/tournois4.jpg" alt="Exemple de stade de tennis." class="slider_img"></div>
+    
+    
+    
+    </div>
+    
+    
+    <div class="myslides fade">
+    
+    <div class="numbers">3 / 4</div>
+    
+    <div><img src="/images/photo/tournois2.jpg" alt="Exemple de stade de foot." class="slider_img"></div>
+    
+    
+    </div>
+    
+    
+    <div class="myslides fade">
+    
+    <div class="numbers">4 / 4</div>
+    
+    <div><img src="/images/photo/tournois1.jpg" alt="Exemple de stade de tennis." class="slider_img"></div>
+    
+    
+    
+    </div>
+    
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    
+    </div>
+    
+    <br>
+    
+    
+    <div style="text-align:center">
+    
+    <span class="dots" onclick="currentSlide(1)"></span> 
+    
+    <span class="dots" onclick="currentSlide(2)"></span> 
+    
+    <span class="dots" onclick="currentSlide(3)"></span> 
+    
+    <span class="dots" onclick="currentSlide(4)"></span> 
+    
+    </div>
+
+</article>
+<article>
+<form method='post' action="{{path('espace_agence_modifier_terrain')}}">
+<div class="rechercheterrain">
+
+
+
+
+
+                  <button type="submit" class="bouton_recherche"><img src="/images/icone/loupe_inv.svg"></button>
+  
+                  <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="nom">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Nom Terrain</label>
+                
+                </div>
+
+                <div class="floating-label">  
+                
+                    <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" name="trier">
+                
+                        <option value=""></option>
+                
+                        
+                        <option value="distance">Distance</option>
+                
+                        <option value="note">Note</option>
+                
+               
+                    </select>
+                
+               
+                    <span class="highlight"></span>
+               
+                    
+                
+                    <label>Trier</label>
+                
+                
+                </div>
+
+
+                <div class="floating-label">  
+                
+                    <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" name="categorie">
+                
+                        <option value=""></option>
+                
+                        
+                        <option value="tennis">Tennis</option>
+                
+                        <option value="foot">Foot</option>
+                
+                        <option value="basket">Basket</option>
+            
+                
+               
+                    </select>
+                
+               
+                    <span class="highlight"></span>
+               
+                    
+                
+                    <label>Type</label>
+                
+                
+                </div>
+
+
+</div>
+
+</form>
+
+</article>
+
+
+
+
+<article>
+
+
+      {% set j = 0 %}
+
+      {% for terrain in terrains %}
+        
+      {% set j = j + 1 %}
+      <div id="{{terrain.id}}" class="overlay">
+        <div class="popup">
+          <div class="close">
+            <a href="#stade{{terrain.id}}">&times;</a>
+          </div>
+          <div class="content">
+          
+  
+         <div  class="bloc">
+           
+        <form method="post"  action="#">
+              
+
+
+                <center>
+
+              <div class="input-file">
+													<img id="file_upload" src="/images/photo/{{terrain.photo}}" alt="your image" class="upload-img" />
+													<div class="input-file-upload">
+														<span class="upload-label">Choisir Une Image</span>
+														<input type='file' onchange="readURL(this);" name="photo" accept="image/*" required />
+													</div>
+												</div>
+			
+                </center>
+			
+          <div class="floating-form">
+
+                <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="nom" required value="{{terrain.nom}}">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Nom De Stade</label>
+                
+                </div>
+
+
+
+
+          
+                <div class="floating-label">      
+                
+                    <input class="floating-input" type="number" placeholder=" " name="largeur" value="{{terrain.largeur}}">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Largeur De Stade</label>
+                
+                </div>
+
+
+
+                 <div class="floating-label">      
+                
+                    <input class="floating-input" type="number" placeholder=" " name="longueur" value="{{terrain.longueur}}">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Longueur De Stade</label>
+                
+                </div>
+
+
+
+                <div class="floating-label">  
+                
+                    <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="">
+
+                        <option value=""></option>
+
+                        <option value="tennis">Tennis</option>
+                
+                        <option value="foot">Foot</option>
+                
+                        <option value="basket">Basket</option>
+                    </select>
+                
+               
+                    <span class="highlight"></span>
+               
+                    
+                
+                    <label>Categorie</label>
+                
+                
+                </div>
+            
+         
+
+
+                 <div class="floating-label">      
+                
+                    <input class="floating-input" type="number" placeholder=" " name="longueur"  value="{{terrain.prix}}">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Prix Du Réservation De Stade</label>
+                
+                </div>
+                
+                
+
+
+                
+
+             
+
+
+
+
+          
+          <center>
+          <div>
+            <button type="submit" class="connection_bouton">Modifier</button>
+          </div></center>
+
+
+          </div>
+        </form>
+      </div>
+  
+  
+          </div>
+        </div>
+      </div>
+
+
+
+      
+      {% endfor %}
+
+
+      
+
+
+      <div class="stades">
+      {% set i = 0 %}
+      
+      {% for terrain in terrains %}
+
+        {% if i == 0 %}
+            <div class="stades">
+        {% endif %}
+
+
+          <div class="stade">
+            
+              <a href="#{{terrain.id}}" id="stade{{terrain.id}}">
+                  <img src="/images/photo/{{terrain.photo}}">
+                  <span class="note_stade"><span class="star">&#9733;</span>4.3</span>
+                  
+                  <span class="titre_stade">{{terrain.nom}}</span>
+                  </a>
+          </div>
+        
+        
+        
+        
+        {% set i = i + 1 %}
+
+        {% if i != j and i is divisible by(4) %}
+            </div>
+            <div class="stades">
+        {% endif %}  
+            
+        {% if i == j %}
+            </div>
+        {% endif %}
+
+      {% endfor %}
+
+
+ 
+
+
+
+         
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</article>
+
+{% endblock %}

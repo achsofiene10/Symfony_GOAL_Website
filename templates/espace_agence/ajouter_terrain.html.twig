@@ -1,0 +1,135 @@
+{% extends 'espace_agence_base.html.twig' %}
+{% block title %} Espace Agence- Ajouter Un Nouveau Terrain{% endblock %}
+
+{% block body_notification %}
+
+    {% if notification is defined %} onload="setTimeout(cacherDiv,3000);" {% endif %}
+
+{% endblock %}
+
+
+{% block section %}
+    <article>
+
+
+        <h2>Ajouter Un Nouveau Terrain</h2>
+
+
+        {% if notification is defined %}
+
+
+            <div id="notification">
+                <div class="rectangle {{ notification }}">
+                    <div class="notification-text">
+                        <img src="/images/icone/{{ notification }}.svg" id="icone_notification">
+                        <span>{{ contenu }}</span>
+                    </div>
+                </div>
+            </div>
+
+
+        {% endif %}
+
+        <div class="bloc">
+
+            <form method="post" action="{{ path('espace_agence_ajouter_terrain') }}" enctype="multipart/form-data">
+
+
+                <center>
+
+                    <div class="input-file">
+                        <img id="file_upload" src="http://placehold.jp/170x170.png" alt="your image"
+                             class="upload-img"/>
+                        <div class="input-file-upload">
+                            <span class="upload-label">Choisir Une Image</span>
+                            <input type='file' onchange="readURL(this);" name="photo" accept="image/*" required/>
+                        </div>
+                    </div>
+
+                </center>
+                <div class="floating-form">
+
+                    <div class="floating-label">
+
+                        <input class="floating-input" type="text" placeholder=" " name="nom" required>
+
+                        <span class="highlight"></span>
+
+                        <label>Nom De Stade</label>
+
+                    </div>
+
+
+                    <div class="floating-label">
+
+                        <input class="floating-input" type="number" placeholder=" " name="largeur" required>
+
+                        <span class="highlight"></span>
+
+                        <label>Largeur De Stade</label>
+
+                    </div>
+
+
+                    <div class="floating-label">
+
+                        <input class="floating-input" type="number" placeholder=" " name="longueur" required>
+
+                        <span class="highlight"></span>
+
+                        <label>Longueur De Stade</label>
+
+                    </div>
+
+
+                    <div class="floating-label">
+
+                        <select class="floating-select" onclick="this.setAttribute('value', this.value);" value=""
+                                name="categorie" required>
+
+                            <option value=""></option>
+
+                            <option value="tennis">Tennis</option>
+
+                            <option value="foot">Foot</option>
+
+                            <option value="basket">Basket</option>
+                        </select>
+
+
+                        <span class="highlight"></span>
+
+
+                        <label>Categorie</label>
+
+
+                    </div>
+
+
+                    <div class="floating-label">
+
+                        <input class="floating-input" type="number" placeholder=" " name="prix" required>
+
+                        <span class="highlight"></span>
+
+                        <label>Prix Du Réservation De Stade</label>
+
+                    </div>
+
+
+                    <center>
+                        <div>
+                            <button type="submit" class="connection_bouton">Ajouter</button>
+                        </div>
+                    </center>
+
+
+                </div>
+            </form>
+        </div>
+
+
+    </article>
+
+
+{% endblock %}

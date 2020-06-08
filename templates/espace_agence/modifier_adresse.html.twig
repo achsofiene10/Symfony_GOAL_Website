@@ -1,0 +1,148 @@
+{% extends 'espace_agence_base.html.twig' %}
+{% block title %} Espace Agence- Modifier Votre Adresse{% endblock %}
+
+{% block body_notification %}
+
+{% if  notification is defined %} onload="setTimeout(cacherDiv,3000);" {% endif %}
+
+{% endblock %}
+
+
+{% block section %}
+    <article>
+
+
+
+<h2>Modifier Votre Adresse</h2>
+
+
+
+{% if notification is defined %} 
+
+
+<div id="notification">
+                <div class="rectangle {{notification}}">
+                    <div class="notification-text">
+                        <img src="/images/icone/{{notification }}.svg" id="icone_notification">
+                        <span>{{contenu }}</span>
+                    </div>
+                </div>
+            </div>
+       
+
+ {% endif %}
+ <div  class="bloc">
+    <form method="post"  action="{{path('espace_agence_modifier_adresse')}}">
+              
+					<div class="floating-form">
+
+                
+
+
+
+          
+                
+
+
+
+
+                <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="latitude" id="latitude" readonly>
+                
+                    <span class="highlight"></span>
+                
+                    <label>Latitude</label>
+                
+                </div>
+                 <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="longitude" id="longitude" readonly>
+                
+                    <span class="highlight"></span>
+                
+                    <label>Longitude</label>
+                
+                </div>
+            
+       
+          
+
+
+                
+                
+
+
+
+             
+
+                    <div id="map"></div>
+    
+    <script>
+
+      function initMap() {
+        {% if app.user.Agence.latitude is null%}
+        var myLatLng = {lat: 35.8253900, lng: 10.6369900};
+        {% else %}
+        var myLatLng = {lat: parseFloat({{ app.user.Agence.latitude }}), lng: parseFloat({{app.user.Agence.longitude}})};
+        {% endif %}
+          
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Deplacer le marqueur vers votre adresse',
+          draggable: true
+        });
+        let lat = document.getElementById("latitude");
+        lat.value= marker.getPosition().lat();
+          
+        let lng = document.getElementById("longitude");
+          lng.value = marker.getPosition().lng();
+
+        google.maps.event.addListener(marker,'dragend',function()
+        {
+         
+          lat.value=marker.getPosition().lat();
+          
+          lng.value =marker.getPosition().lng();
+        }
+        )
+
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD08n1rYnrTx6EbzxPVjd040tXQ028-WAw&callback=initMap">
+    </script>
+
+
+          
+
+                
+
+
+
+                                
+                    <center>
+                        <div>
+                            <button type="submit" class="connection_bouton">Enregistrer </button>
+                        </div>
+                    </center>
+                    
+          </div>
+        </form>
+        </div>
+
+        
+
+
+
+    </article>
+
+
+{% endblock %}

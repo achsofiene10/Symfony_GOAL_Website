@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <title>GOAL{% block title %}{% endblock %}</title>
+
+    <meta charset="UTF-8">
+
+    <link href="/style/style_public.css" rel="stylesheet" type="text/css">
+    <link href="/style/style_public_tablet.css" rel="stylesheet" media="(max-width: 1050px)"/>
+    <link href="/style/style_public_portable.css" rel="stylesheet" media=" (max-width: 820px)"/>
+    <link rel="icon" type="image/jpg" href=/images/photo/goal.jpg>
+
+
+</head>
+
+<body {% block body_notification %}{% endblock %}>
+
+<nav id="menu">
+
+
+    <div id="conteneur_logo">
+        <a href="{{ path('accueil') }}">
+            <img src="/images/photo/goal_logo.jpg" class="logo">
+        </a>
+
+    </div>
+
+    <div id="conteneur_liste">
+        {% if app.user != "" %}
+            <ul>
+                <li>
+                    <a href="{{ path('logout') }}">
+                        <img src="/images/icone/sign-out.svg"><span> Déconnexion </span>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+
+                <li>
+
+                    <a href="{{ path('espace_public_votre_profile') }}">
+                        <img src="/images/icone/user.svg"><span>Votre Profile </span>
+                    </a>
+
+
+                </li>
+
+            </ul>
+
+
+        {% else %}
+
+
+
+            <ul>
+                <li>
+                    <a href="{{ path('espace_public_connexion') }}">
+                        <img src="/images/icone/sign-in.svg"><span>  Connexion </span>
+                    </a>
+
+                </li>
+
+            </ul>
+
+
+            <ul>
+                <li>
+
+                    <a href="{{ path('inscription') }}">
+                        <img src="/images/icone/note.svg"> <span> Inscription  </span>
+                    </a>
+                    <ul>
+                        <li>
+
+                            <a href="{{ path('espace_public_inscription_client') }}">
+                                <img src="/images/icone/client.svg"> <span> Comme Client  </span>
+                            </a>
+
+
+                        </li>
+                        <li>
+
+                            <a href="{{ path('espace_public_inscription_agence') }}">
+                                <img src="/images/icone/placeholder.svg"> <span> Comme Agence  </span>
+                            </a>
+
+
+                        </li>
+                    </ul>
+
+                </li>
+
+            </ul>
+
+
+        {% endif %}
+
+
+        <ul>
+            <li>
+
+                <a href="{{ path('espace_public_nos_terrains') }}">
+                    <img src="/images/icone/soccer-field.svg"> <span> Nos Terrain  </span>
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <ul>
+            <li>
+
+                <a href="{{ path('espace_public_nos_agences') }}">
+                    <img src="/images/icone/placeholder.svg"> <span>Nos Agences </span>
+                </a>
+
+            </li>
+
+        </ul>
+
+        <ul>
+
+            <li>
+
+                <a href="{{ path('espace_public_nos_tournois') }}">
+                    <img src="/images/icone/trophy.svg"><span> Nos Tournois</span>
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div id="conteneur_recherche">
+
+        <div class="searchbar ">
+            <input class="search_input" type="text" name="" placeholder="Chercher...">
+            <a href="#" class="search_icon"><img src="/images/icone/loupe.svg" id="loupe_icone"></a>
+        </div>
+
+    </div>
+</nav>
+
+
+<section>
+
+    {% block section %}
+
+    {% endblock %}
+
+</section>
+
+
+<footer>
+    <div id="social">
+        <ul>
+            <li>
+                <a href="#"> <img src="/images/icone/facebook.svg" class="social_img"></a>
+            </li>
+
+            <li>
+                <a href="#"> <img src="/images/icone/twitter.svg" class="social_img"></a>
+
+            </li>
+
+            <li>
+                <a href="#"><img src="/images/icone/google-plus.svg" class="social_img"> </a>
+            </li>
+
+            <li>
+                <a href="#"><img src="/images/icone/linkedin.svg" class="social_img"></a>
+            </li>
+
+
+            <li>
+                <a href="#"><img src="/images/icone/instagram.svg" class="social_img"></a>
+            </li>
+
+            <li>
+                <a href="#"><img src="/images/icone/pinterest.svg" class="social_img"></a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div id="Copyright">
+        <h4>&copy; 2020 Copyright:Sofiene Achour</h4>
+    </div>
+
+</footer>
+
+
+<script src="/jquery/jquery-3.2.1.min.js"></script>
+<script src="/js/main.js"></script>
+{% block javascript %}{% endblock %}
+</body>
+</html>

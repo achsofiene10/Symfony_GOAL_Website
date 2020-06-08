@@ -1,0 +1,137 @@
+{% extends 'espace_public_base.html.twig' %}
+
+{% block title %} Inscription Agence{% endblock %}
+
+{% block body_notification %}
+
+{% if notification is defined %} onload="setTimeout(cacherDiv,6000);" {% endif %}
+
+{% endblock %}
+
+
+
+
+{% block section %}
+
+
+{% if notification is defined %} 
+
+
+<div id="notification">
+                <div class="rectangle {{notification}}">
+                    <div class="notification-text">
+                        <img src="/images/icone/{{notification}}.svg" id="icone_notification">
+                        <span>{{contenu | raw}}</span>
+                    </div>
+                </div>
+            </div>
+       
+
+ {% endif %}
+
+
+
+
+    <h1>S'inscrire</h1>
+           
+    <h2>Vous avez déjà un compte GOAL ?  <a href="{{path('espace_public_connexion')}}">Se connecter</a></h2>
+    <article>  
+      <div  class="bloc">
+           
+        <form method="post"  action="{{path('espace_public_inscription_agence')}}">
+              
+			
+          <div class="floating-form">
+
+                <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="matricule_fiscale" required pattern="[0-9]{7}[A-Z]{1}" title="Votre matricule fiscal doit contenir 7 chiffres suivis d'une lettre en majuscules">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Matricule Fiscale</label>
+                
+                </div>
+
+
+
+
+          
+                <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="nom_agence" required pattern=".{4,}" "Le nom de l'agence  doit contenir au moins 4 caractères ">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Nom De L'agence</label>
+                
+                </div>
+
+
+
+
+
+                <div class="floating-label">      
+                
+                    <input class="floating-input" type="email" placeholder=" " name="email" >
+                
+                    <span class="highlight"></span>
+                
+                    <label>Email</label>
+                
+                </div>
+            
+         
+          
+
+               <div class="floating-label">      
+                
+                    <input class="floating-input" type="password" placeholder=" " name="mot_passe" required pattern=".{8,}">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Mot de passe</label>
+                
+                </div>
+
+
+
+
+                
+               <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="num_tel" >
+                
+                    <span class="highlight"></span>
+                
+                    <label>Numero Téléphone</label>
+                
+                </div>
+                
+                
+
+
+                
+
+             
+
+
+
+
+          
+          <center>
+          <div>
+            <button type="submit" class="connection_bouton">S'inscrire</button>
+          </div></center>
+
+
+          </div>
+        </form>
+      </div>
+      
+      
+    </article>
+    <p>* En vous connectant, vous acceptez nos Conditions</br>
+       d'utilisation et de recevoir des e-mails et actualités GOAL et</br> 
+      vous reconnaissez avoir lu notre Politique de confidentialité.</p>
+{% endblock %}

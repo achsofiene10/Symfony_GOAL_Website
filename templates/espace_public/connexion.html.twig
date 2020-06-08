@@ -1,0 +1,105 @@
+{% extends 'espace_public_base.html.twig' %}
+
+{% block title %} Connexion{% endblock %}
+
+{% block section %}
+<h1>Se connecter</h1>
+
+            {% if error %}
+
+
+
+            
+<div id="notification">
+                <div class="rectangle danger">
+                    <div class="notification-text">
+                        <img src="/images/icone/danger.svg" id="icone_notification">
+                        <span>Email ou mot de passe est incorrect</span>
+                    </div>
+                </div>
+            </div>
+
+  {% endif %}
+    <h2>Nouvel utilisateur ? <a href="{{path('inscription')}}">S'inscrire</a></h2>
+    <article>  
+
+      <div id="formulaire_connection" class="bloc">
+           
+        <form method="post"  action="{{path('login')}}">
+              
+					<div class="floating-form">
+
+                
+
+
+
+          
+                
+
+
+
+
+                <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="_username" >
+                
+                    <span class="highlight"></span>
+                
+                    <label>Email</label>
+                
+                </div>
+            
+         
+          
+
+               <div class="floating-label">      
+                
+                    <input class="floating-input" type="password" placeholder=" " name="_password" required pattern=".{8,}">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Mot de passe</label>
+                
+                </div>
+
+
+
+          
+
+                    <div class="bouton">
+                    
+                        <input type="checkbox" id="sauvgarde" name="_remember_me">
+                        <span class="coockies">
+                        Se souvenir de moi
+                        </span>
+                    </div>
+
+
+
+                                
+                    <center>
+                        <div>
+                            <button type="submit" class="connection_bouton">Connexion</button>
+                        </div>
+                    </center>
+                    
+          </div>
+        </form>
+
+      </div>
+      
+      <div id="connection" class="bloc">
+
+            <ul class="connection_api">
+                <a href="#"><li id="Google"><img src="/images/photo/google.png"><span>Continuer avec Google</span></li></a>
+                <a href="#"><li id="Facebook"><img src="/images/photo/Facebook.png"><span>Continuer avec Facebook</span></li></a>
+            </ul>
+      </div>
+
+    </article>
+    <p>* En vous connectant, vous acceptez nos Conditions</br>
+       d'utilisation et de recevoir des e-mails et actualités GOAL et</br> 
+      vous reconnaissez avoir lu notre Politique de confidentialité.</p>
+
+
+{% endblock %}

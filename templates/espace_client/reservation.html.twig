@@ -1,0 +1,167 @@
+{% extends 'espace_client_base.html.twig' %}
+
+{% block title %} Résérvation{% endblock %}
+
+{% block body_notification %}
+
+{% if notification is defined %} onload="setTimeout(cacherDiv,6000);" {% endif %}
+
+{% endblock %}
+
+
+
+
+{% block section %}
+
+
+{% if notification is defined %} 
+
+
+<div id="notification">
+                <div class="rectangle {{notification}}">
+                    <div class="notification-text">
+                        <img src="/images/icone/{{notification}}.svg" id="icone_notification">
+                        <span>{{contenu | raw}}</span>
+                    </div>
+                </div>
+            </div>
+       
+
+ {% endif %}
+
+
+
+
+    <h1>Résérvation Du Terrain</h1>
+           
+     <article>  
+      <div  class="bloc">
+           
+        <form method='post' action="{{ path('espace_client_reservation', { 'id': terrain.id }) }}">
+              
+			
+          <div class="floating-form">
+
+                <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="nom_agence" required readonly value="{{agence.nom}}">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Nom D'Agence</label>
+                
+                </div>
+
+
+
+
+          
+                <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="nom_terrain" required readonly value="{{terrain.nom}}">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Nom Du Stade</label>
+                
+                </div>
+
+
+
+
+
+                <div class="floating-label">      
+                
+                    <input class="floating-input" type="number" placeholder=" " name="prix" readonly value="{{terrain.prix}}" >
+                
+                    <span class="highlight"></span>
+                
+                    <label>Prix De Résérvation</label>
+                
+                </div>
+            
+         
+          
+
+               <div class="floating-label">      
+                
+                    <input class="floating-input" type="date" onclick="(this.type='date')" placeholder=" " name="date" required>
+                
+                    <span class="highlight"></span>
+                
+                  <label>Date De Résérvation</label>
+                
+                </div>
+
+
+
+
+                
+              
+                <div class="floating-label">  
+                
+                    <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" name="heure">
+                
+                        <option value=""></option>
+                        <option value="00">00h</option>
+                        <option value="01">01h</option>
+                        <option value="02">02h</option>
+                        <option value="03">03h</option>
+                        <option value="04">04h</option>
+                        <option value="05">05h</option>
+                        <option value="06">06h</option>
+                        <option value="07">07h</option>
+                        <option value="08">08h</option>
+                        <option value="09">09h</option>
+                        <option value="10">10h</option>
+                        <option value="11">11h</option>
+                        <option value="12">12h</option>
+                        <option value="13">13h</option>
+                        <option value="14">14h</option>
+                        <option value="15">15h</option>
+                        <option value="16">16h</option>
+                        <option value="17">17h</option>
+                        <option value="18">18h</option>
+                        <option value="19">19h</option>
+                        <option value="20">20h</option>
+                        <option value="21">21h</option>
+                        <option value="22">22h</option>
+                        <option value="23">23h</option>
+                
+               
+                    </select>
+                
+               
+                    <span class="highlight"></span>
+               
+                    
+                
+                    <label>Heure De Résérvation</label>
+                
+                
+                </div>
+                
+                
+
+
+                
+
+             
+
+
+
+
+          
+          <center>
+          <div>
+            <button type="submit" class="connection_bouton">Réserver</button>
+          </div></center>
+
+
+          </div>
+        </form>
+      </div>
+      
+      
+    </article>
+{% endblock %}

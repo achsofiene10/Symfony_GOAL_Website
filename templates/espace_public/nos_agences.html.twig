@@ -1,0 +1,228 @@
+{% extends 'espace_public_base.html.twig' %}
+
+{% block title %} Nos Agences{% endblock %}
+
+{% block section %}
+
+   <article>  
+      
+    
+<div class="slideshow-container">
+
+
+    <div class="myslides fade">
+    
+    <div class="numbers">1 / 4</div>
+    
+    <div><img src="/images/photo/agence1.jpg" alt="Exemple de stade de basket."class="slider_img"></div>
+    
+  
+    
+    </div>
+    
+    
+    <div class="myslides fade">
+    
+    <div class="numbers">2 / 4</div>
+    
+    <div><img src="/images/photo/agence2.jpg" alt="Exemple de stade de tennis." class="slider_img"></div>
+    
+    
+    
+    </div>
+    
+    
+    <div class="myslides fade">
+    
+    <div class="numbers">3 / 4</div>
+    
+    <div><img src="/images/photo/agence3.jpg" alt="Exemple de stade de foot." class="slider_img"></div>
+    
+    
+    </div>
+    
+    
+    <div class="myslides fade">
+    
+    <div class="numbers">4 / 4</div>
+    
+    <div><img src="/images/photo/agence4.jpg" alt="Exemple de stade de tennis." class="slider_img"></div>
+    
+    
+    
+    </div>
+    
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    
+    </div>
+    
+    <br>
+    
+    
+    <div style="text-align:center">
+    
+    <span class="dots" onclick="currentSlide(1)"></span> 
+    
+    <span class="dots" onclick="currentSlide(2)"></span> 
+    
+    <span class="dots" onclick="currentSlide(3)"></span> 
+    
+    <span class="dots" onclick="currentSlide(4)"></span> 
+    
+    </div>
+
+</article>
+<article>
+<form method='post' action="{{path('espace_public_nos_agences')}}">
+<div class="rechercheterrain">
+
+
+
+
+
+                  <button type="submit" class="bouton_recherche"><img src="/images/icone/loupe_inv.svg"></button>
+  
+                  <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="nom">
+                
+                    <span class="highlight"></span>
+                
+                    <label>Nom Agence</label>
+                
+                </div>
+
+                <div class="floating-label">  
+                
+                    <select class="floating-select" onclick="this.setAttribute('value', this.value);" value="" name="trier">
+                
+                        <option value=""></option>
+                
+                        
+                        <option value="distance">Distance</option>
+                
+                        <option value="note">Note</option>
+                
+               
+                    </select>
+                
+               
+                    <span class="highlight"></span>
+               
+                    
+                
+                    <label>Trier</label>
+                
+                
+                </div>
+
+
+
+
+</div>
+</form>
+
+</article>
+
+
+
+<article>
+
+
+
+
+
+
+
+      
+      {% set j = 0 %}
+
+      {% for agence in agences %}
+        
+      {% set j = j + 1 %}
+
+
+
+      
+      <div id="{{agence.id}}" class="overlay">
+        <div class="popup">
+          <div class="close">
+            <a href="#stade{{agence.id}}">&times;</a>
+          </div>
+          <div class="content">
+            <center>
+                <a href="/images/photo/{{agence.photo}}"><img src="/images/photo/{{agence.photo}}" class="modalphoto"></a>
+          </center>
+  
+          <table>
+              <tr class="paire"><td><span class="champ">Nom : </span>         {{agence.nom}}</td>
+              </tr>
+  
+              <tr class="impaire"><td><span class="champ">Numero Téléphone : </span>        {{agence.numTel}}</td>
+              </tr>
+              
+  
+            </table>
+  
+  
+          </div>
+        </div>
+      </div>
+
+
+
+
+{% endfor %}
+
+
+
+
+ <div class="stades">
+      {% set i = 0 %}
+      
+      {% for agence in agences %}
+
+        {% if i == 0 %}
+            <div class="stades">
+        {% endif %}
+
+
+          <div class="stade">
+            
+              <a href="#{{agence.id}}" id="stade{{agence.id}}">
+                  <img src="/images/photo/{{agence.photo}}">
+                  <span class="note_stade"><span class="star">&#9733;</span>4.3</span>
+                  
+                  <span class="titre_stade">{{agence.nom}}</span>
+                  </a>
+          </div>
+        
+        
+        
+        
+        {% set i = i + 1 %}
+
+        {% if i != j and i is divisible by(4) %}
+            </div>
+            <div class="stades">
+        {% endif %}  
+            
+        {% if i == j %}
+            </div>
+        {% endif %}
+
+      {% endfor %}
+
+
+ 
+</div>
+
+
+
+</article>
+
+{% endblock %}

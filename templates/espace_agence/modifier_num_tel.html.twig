@@ -1,0 +1,81 @@
+ {% extends 'espace_agence_base.html.twig' %}
+{% block title %} Espace Agence-Modifier Numero Téléphone D'Agence{% endblock %}
+
+{% block body_notification %}
+
+{% if  notification is defined %} onload="setTimeout(cacherDiv,3000);" {% endif %}
+
+{% endblock %}
+
+
+{% block section %}
+    <article>
+
+
+
+<h2>Modifier Numero Téléphone D'Agence</h2>
+
+
+
+{% if  notification is defined  %} 
+
+
+<div id="notification">
+                <div class="rectangle {{notification }}">
+                    <div class="notification-text">
+                        <img src="/images/icone/{{notification }}.svg" id="icone_notification">
+                        <span>{{contenu }}</span>
+                    </div>
+                </div>
+            </div>
+       
+
+ {% endif %}
+  
+      <div  class="bloc">
+ 
+ <form method="post"  action="{{path('espace_agence_modifier_num_tel')}}">
+              
+
+               <div class="floating-label">      
+                
+                    <input class="floating-input" type="text" placeholder=" " name="num_tel" required value="{{app.user.agence.numTel}}" >
+                
+                    <span class="highlight"></span>
+                
+                    <label>Numero Téléphone</label>
+                
+                </div>
+       
+                
+                
+
+
+                
+
+             
+
+
+
+
+          
+          <center>
+          <div>
+            <button type="submit" class="connection_bouton">Modifier</button>
+          </div></center>
+
+
+          </div>
+        </form>
+        
+      </div>
+      
+      
+  
+
+
+
+    </article>
+
+
+{% endblock %}
